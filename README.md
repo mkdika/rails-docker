@@ -11,21 +11,21 @@ Serving & provision the development dependencies of Ruby on Rails project with D
 
 ## Stack
 
-- PostgreSQL
-  version: `12`
-  docker-image: `postgres:12-alpine`
+1. __PostgreSQL__, version: `12`, docker-image: [postgres:12-alpine](https://hub.docker.com/_/postgres)
 
-- Redis
-  version: `6.2`
-  docker-image: `redis:6.2-alpine`
+2. __Redis__, version: `6.2`, docker-image: [redis:6.2-alpine](https://hub.docker.com/_/redis)
 
-- Ruby
-  version: `3.0.1`
-  docker-base: `ruby:3.0.1`
+3. __Ruby__, version: `3.0.1`, docker-image: [ruby:3.0.1](https://hub.docker.com/_/ruby)
 
 ## Running
 
-- Run ruby web apps
+- Run Rails web apps
+
+  ```bash
+  docker-compose up
+  ```
+
+  Access rails project from url: [http://localhost:3000](http://localhost:3000)
 
 ## Copyright and License
 
