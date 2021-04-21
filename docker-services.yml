@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+  redis:
+    image: redis:6.2-alpine
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - $PWD:/rails-docker
+      - ./docker/mount:/mount
+    environment:
+      DATABASE_HOST: db
+      DATABASE_USERNAME: postgres
+      RAILS_ENV: development
+    tmpfs:
+      - /tmp
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G

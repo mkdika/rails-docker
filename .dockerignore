@@ -1,0 +1,9 @@
+.git
+.scannerwork
+.coverage
+.peru
+node_modules
+personalization
+tmp
+log
+public
